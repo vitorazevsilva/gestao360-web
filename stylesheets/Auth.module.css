@@ -3,7 +3,6 @@
     justify-content: center;
     flex-wrap: wrap;
     align-content: center;
-
 }
 
 .form {
@@ -46,3 +45,40 @@
     padding: 0 10px 0 10px;
 }
 
+.formFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.textLink{
+    text-decoration-line: underline;
+    color: #495057;
+    margin-top: 13px;
+}
+
+.checkbox {
+  transform: scale(1.5); 
+  margin-right: 10px;
+}
+
+.button{
+    border: none;
+    background-color: #ff8329;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    height: 40px;
+    font-size: 17px;
+}
+
+@media only screen and (max-width: 430px) {
+    .formFooter{
+        display: grid;
+    }
+}

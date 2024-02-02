@@ -1,6 +1,12 @@
 import styles from '@/stylesheets/Auth.module.css';
-
-export default function About() {
+import Link from 'next/link'
+import { useState } from 'react';
+export default function Signin() {
+    const [form, setForm] = useState({
+        email: '',
+        password: '',
+        rememberMe: false
+      })
     return (
         <div className={styles.container}>
             <div className={styles.form}>
@@ -13,30 +19,37 @@ export default function About() {
                         autoComplete='email'
                         placeholder='alguem@exemplo.com'
                         className={styles.input}
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
                     />
                 </div>
                 <div className={styles.inputContainer}>
-                    <p className={styles.label}>Email:</p>
+                    <p className={styles.label}>Palavra-passe:</p>
                     <input
                         type='password'
                         autoComplete='current-password'
                         placeholder='***********'
                         className={styles.input}
+                        value={form.password}
+                        onChange={(e) => setForm({ ...form, password: e.target.value })}
                     />
                 </div>
                 <div className={styles.formFooter}>
-            <div className={{ flexDirection: 'row' }}>
-              {/* <Switch
-                className={styles.switch}
-                trackColor={{ false: '#767577', true: '#F7A224' }}
-                thumbColor={'#ff8329'}
-                value={form.rememberMe}
-                onValueChange={(value) => setForm({ ...form, rememberMe: value })}
-              /> */}
-              <p className={{ color: '#495057', marginTop: 14, marginLeft: 5 }}>Memorizar-me</p>
-            </div>
-            <a className={styles.textLink} href={{ pathname: '/auth/recovery' }}>Esqueci-me a Palavra-Passe</a>
-          </div>
+                    <label style={{ color: '#495057', marginTop: 13, marginLeft: 5 }}>
+                        <input 
+                            type="checkbox" 
+                            className={styles.checkbox} 
+                            checked={form.rememberMe}
+                            onChange={(e) => setForm({ ...form, rememberMe: e.target.checked })}
+                        /> 
+                        Memorizar-me 
+                    </label>
+                    <Link className={styles.textLink} href={{ pathname: '/auth/recovery' }}>Esqueci-me a Palavra-Passe</Link>
+                </div>
+                <input type="button" className={styles.button} value="Entrar com Palavra-Passe" />
+                <p style={{ display:'flex', justifyContent: 'center' }}>OU</p>
+                <input type="button" className={styles.button} value="Entrar sem Palavra-Passe" />
+                <p className={styles.textLink} style={{ display:'flex', justifyContent: 'center' }} href={{ pathname: '/auth/signup' }}>Quero começar a usar o Gestão 360</p>
             </div>
         </div>
 
