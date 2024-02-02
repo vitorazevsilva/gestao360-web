@@ -1,0 +1,25 @@
+:root {
+    --background-color: 246, 247, 252, 100;
+    --primary-color: 255, 131, 41, 100;
+    --font-family: 'Poppins', sans-serif;
+}
+
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+    background-color: rgba(var(--background-color));
+
+}
+
+p {
+    margin: 0;
+}

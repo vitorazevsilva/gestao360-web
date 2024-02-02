@@ -1,4 +1,4 @@
-//import '@/styles/globals.css';
+import '@/stylesheets/globals.css';
 
 const App = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
